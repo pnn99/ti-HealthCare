@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #DEF4C6;
+}
+
+h1 {
+    color: #206058;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#logo {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 30px auto;
+    padding: 10px 0;
+    background-color: #D9D9D9;
+    color: #206058;
+    border-radius: 20px;
+    width: 150px;
+}
+
+.card {
+    width: 300px;
+    height: 450px;
+    color: #fff;
+    background-color: #206058;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+button {
+    background-color: #D9D9D9;
+    color: #206058;
+    font-size: medium;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    margin: 20px 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #1B512D;
+    color: #DEF4C6;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.links a:hover {
+    color: #73E2A7;
+    text-decoration: underline;
+}
