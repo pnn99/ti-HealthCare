@@ -1,4 +1,58 @@
-.logo {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #DEF4C6;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, #1A5C37, #206058);
+    min-height: 150px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.log {
+    display: flex;
+}
+
+.log h1 {
+    color: white;
+    margin-left: 50px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.288);
+    font-weight: normal;
+}
+
+nav {
+    margin: 0 auto 20px auto;
+    width: 900px;
     background-color: #73E2A7;
-    padding: 50px;
+    padding: 10px;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.185);
+    border-radius: 10px;
+}
+
+nav > a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+nav > a:hover {
+    background-color: #1A5C37;
+}
+
+.lastdiv {
+    width: 500px;
 }
