@@ -5,6 +5,7 @@
 
 body {
     background-color: #DEF4C6;
+    font-size: 16px;
 }
 
 header {
@@ -14,24 +15,36 @@ header {
     min-height: 150px;
     text-align: center;
     padding-top: 30px;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.185);
+    min-height: 150px;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
 }
 
 .log {
     display: flex;
+    justify-content: space-around;
+    margin-bottom: 0px;
+    flex-direction: row;
+    align-items: center;
 }
 
 .log h1 {
     color: white;
-    margin-left: 50px;
-    margin-bottom: 25px;
+    margin-bottom: 0px;
     margin-top: 10px;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.288);
     font-weight: normal;
+    cursor: pointer;
 }
 
 nav {
-    margin: 0 auto 20px auto;
-    width: 900px;
+    margin: 0 auto 30px auto;
+    width: 75%;
+    text-align: center;
     background-color: #73E2A7;
     padding: 10px;
     box-shadow: 0 7px 7px rgba(0, 0, 0, 0.185);
@@ -40,7 +53,7 @@ nav {
 
 nav > a {
     text-decoration: none;
-    color: white;
+    color: #1A5C37;
     padding: 10px;
     font-weight: bold;
     border-radius: 10px;
@@ -51,8 +64,137 @@ nav > a {
 
 nav > a:hover {
     background-color: #1A5C37;
+    color: white;
 }
 
-.lastdiv {
+main {
+    padding: 20px;
+    background-color: #DEF4C6;
+    max-width: 1000px;
+    min-width: 300px;
+    margin: auto;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#empresa {
+    background-color: #1A5C37;
+    border-radius: 15px;
+    color: white;
+    padding: 20px;
+    margin-bottom: 62px;
+    margin-top: 20px;
+}
+
+#empresa h2{
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#justifica {
+    width: 880px;
+}
+
+#contem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.servitem {
+    width: 400px;
+    background-color: #1A5C37;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.servitem a {
+    text-decoration: none;
+    color: white;
+}
+
+.servitem a:hover {
+    text-decoration: underline;
+    color: #73E2A7;
+}
+
+#lastdiv {
     width: 500px;
+    height: 400px;
+}
+
+footer {
+    background-color: #206058;
+    color: white;
+    min-height: 20px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.description {
+    margin-bottom: 20px;
+}
+
+footer div a {
+    text-decoration: none;
+    margin-right: 10px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; 
+    }
+
+    header {
+        min-height: auto; 
+        padding-top: 10px; 
+    }
+
+    .log {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    nav {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    nav > a {
+        margin: 0 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    #empresa {
+        padding: 10px;
+    }
+
+    #justifica {
+        width: 100%;
+    }
+
+    #contem {
+        flex-direction: column;
+    }
+
+    .servitem {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #lastdiv {
+        width: 100%;
+    }
 }
