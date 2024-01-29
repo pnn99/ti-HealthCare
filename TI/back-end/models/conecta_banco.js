@@ -1,6 +1,6 @@
 // conecta_banco.js
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('inter', 'root', 'root', {
+const sequelize = new Sequelize('inter', 'root', '', {
     host: "localhost",
     dialect: "mysql",
     port: 3306,
