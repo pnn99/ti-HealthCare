@@ -99,11 +99,11 @@ Servico.belongsTo(Usuario, { foreignKey: 'idUsuario' });
 Servico.belongsTo(ServicoTipo, { foreignKey: 'idTipo' });
 
 // Sincronizando os modelos com o banco de dados
-/*Usuario.sync();
+Usuario.sync();
 Equipe.sync();
 Colaborador.sync();
 ServicoTipo.sync();
-Servico.sync();*/
+Servico.sync();
 
 const syncModels = async () => {
     await conecta_banco.sequelize.sync();
