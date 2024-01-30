@@ -3,15 +3,15 @@
 function login() {
     event.preventDefault();
 
-    const email = document.getElementById('email').value;
+    const cpf = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     const data = {
-        "email": email,
-        "password": password
+        "cpf": cpf,
+        "senha": password
     };
 
-    fetch('http://localhost:8082/seu-endpoint-de-login', {
+    fetch('http://localhost:8082/usuario/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -26,11 +26,15 @@ function login() {
     })
     .then(data => {
         console.log('Success:', data);
-        alert('Login bem-sucedido!');
-        // Adicione redirecionamento ou outras ações após o login bem-sucedido, se necessário
+        if(data.sucess){
+            alert(data.mensagem);
+            window.location.href = "consulta.html";
+        }else{
+            alert(data.mensagem)            
+        }
     })
     .catch((error) => {
         console.error('Error:', error);
-        alert('Erro ao realizar login. Verifique o console para mais detalhes.');
+        alert('Erro ao realizar login.');
     });
 }

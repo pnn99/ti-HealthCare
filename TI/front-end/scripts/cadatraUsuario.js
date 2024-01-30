@@ -3,27 +3,25 @@
 function cadastrar() {
     event.preventDefault();
 
-    const firstName = document.getElementById('firstName').value;
+    const nome = document.getElementById('firstName').value;
     const lastName = document.getElementById('lastName').value;
     const email = document.getElementById('email').value;
-    const cpf = document.getElementById('cpf').value;
-    const cep = document.getElementById('cep').value;
-    const houseNumber = document.getElementById('houseNumber').value;
+    const cpf = document.getElementById('cpf').value;   
     const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
+    const cidade = document.getElementById('houseNumber').value;
+    const telefone = document.getElementById('telefone').value;
 
     const data = {
-        "firstName": firstName,
-        "lastName": lastName,
-        "email": email,
         "cpf": cpf,
-        "cep": cep,
-        "houseNumber": houseNumber,
-        "password": password,
-        "confirmPassword": confirmPassword
+        "nome": nome + " " +lastName,
+        "telefone": telefone,
+        "senha": password,
+        "email": email,
+        "cidade": cidade,
+        
     };
 
-    fetch('http://localhost:8082/seu-endpoint-de-cadastro', {
+    fetch('http://localhost:8082/usuario/usuarios', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -34,9 +32,10 @@ function cadastrar() {
     .then(data => {
         console.log('Success:', data);
         alert('Cadastro realizado com sucesso!');
+        window.location.href = "login.html";
     })
     .catch((error) => {
         console.error('Error:', error);
-        alert('Erro ao cadastrar. Verifique o console para mais detalhes.');
+        alert('Erro ao cadastrar.');
     });
 }
