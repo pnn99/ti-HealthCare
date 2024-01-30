@@ -8,19 +8,45 @@
     <title>Consultas Online</title>
 </head>
 <body>
-    <header>
-        <h1>Marque a sua consulta</h1>
-    </header>
-    <section class="main-content">
-        <form action="#" method="post">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
+    <div class="sidebar">
+        <button class="sidebar-button" onclick="showContent('agendamento')"> <i class="bi bi-calendar-check"></i> Agendamento</button>
+        <button class="sidebar-button" onclick="showContent('doacoes')"> <i class="bi bi-currency-dollar"></i> Doações</button>
+    </div>
+    <main>
+        <header>
+            <h1>Marque a sua consulta</h1>
+        </header>
+        <section id="agendamento" class="main-content active">
+            <form action="#" method="post">
+                <label for="name">Nome do paciente:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="appointmentType">Tipo de Consulta:</label>
+                <select id="appointmentType" name="appointmentType">
+                    <option value="medical">Consulta Médica</option>
+                    <option value="dental">Consulta Odontológica</option>
+                    <option value="psychological">Consulta Psicológica</option>
+                </select>
+                <label for="reason">Motivo da Consulta:</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea>
+                <button type="submit" onclick="marcaConsulta()">Marcar Consulta</button>
+            </form>
+        </section>
+        <section id="doacoes" class="main-content">
+            <p>Chave pix: (31)99831-2081</p>
+        </section>
+    </main>
+    <script>
+        function showContent(contentId) {
+            // Oculta todos os conteúdos
+            var contents = document.querySelectorAll('.main-content');
+            contents.forEach(function (content) {
+                content.classList.remove('active');
+            });
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>             
-
-            <button type="submit" onclick="marcaConsulta()">Marcar Consulta</button>
-        </form>
-    </section>
+            // Exibe apenas o conteúdo clicado
+            var activeContent = document.getElementById(contentId);
+            activeContent.classList.add('active');
+        }
+    </script>
 </body>
 </html>
