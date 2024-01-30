@@ -3,7 +3,7 @@
 function login() {
     event.preventDefault();
 
-    const cpf = document.getElementById('email').value;
+    const cpf = document.getElementById('cpf').value;
     const password = document.getElementById('password').value;
 
     const data = {
