@@ -10,7 +10,7 @@ function marcaConsulta() {
         "email": email
     };
 
-    fetch('http://localhost:8082/seu-endpoint-de-marcar-consulta', {
+    fetch('http://localhost:8082/servico/servicos', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -20,10 +20,11 @@ function marcaConsulta() {
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-        alert('Consulta marcada com sucesso!');
+        alert('Consulta marcada com sucesso! Entraremos em contato para agendar '+
+        'data, hora e local.');
     })
     .catch((error) => {
         console.error('Error:', error);
-        alert('Erro ao marcar consulta. Verifique o console para mais detalhes.');
+        alert('Entre em contato...');
     });
 }

@@ -52,4 +52,122 @@ router.delete('/usuarios/:cpf', async (req, res) => {
     }
 });
 
+// Rota para criar login
+router.post('/login', async (req, res) => {
+    const { cpf, senha } = req.body;  
+
+    try {
+        let usuarioLogin = await Usuario.findOne({ where: { cpf } });  
+        if (usuarioLogin && usuarioLogin.senha === senha) {  // Adicionada verificação se usuário existe
+            res.send({sucess: true, mensagem:"Login autorizado"});
+        } else {
+            res.send({sucess: false, mensagem:"Login não autorizado"});
+        }
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
+
 module.exports = router;
+
+/**
+ * @swagger
+ * tags:
+ *   name: Usuarios
+ *   description: Endpoints relacionados aos usuários
+ */
+
+// Define Swagger options
+
+// Serve Swagger documentation using Swagger UI
+/**
+ * @swagger
+ * /api-docs:
+ *   get:
+ *     summary: Obtém a documentação da API Swagger
+ *     responses:
+ *       200:
+ *         description: Documentação da API Swagger
+ */
+
+// Rota para listar todos os usuários
+/**
+ * @swagger
+ * /usuario/usuarios:
+ *   get:
+ *     summary: Obtém todos os usuários
+ *     tags: [Usuarios]
+ *     responses:
+ *       200:
+ *         description: Resposta bem-sucedida
+ *         content:
+ *           application/json:
+ *             example:
+ *               - id: 1
+ *                 name: John Doe
+ *               - id: 2
+ *                 name: Jane Doe
+ */
+
+// Rota para criar um novo usuário
+/**
+ * @swagger
+ * /usuario/usuarios:
+ *   post:
+ *     summary: Cria um novo usuário
+ *     tags: [Usuarios]
+ *     requestBody:
+ *       content:
+ *         application/json:
+ *           example:
+ *             cpf: 11111111111   
+ *             nome: melancia
+ *             telefone: 111111111 
+ *             senha: 1234567899 
+ *             estado: minas gerais
+ *             cidade: belo horizonte
+ *             bairro: lurdes
+ *     responses:
+ *       201:
+ *         description: Usuário criado com sucesso
+ *         content:
+ *           application/json:
+ *             example:
+ *               id: 1
+ *               name: John Doe
+ *               email: john@example.com
+ */
+
+// Suas outras rotas existentes...
+
+// Rota para criar um novo usuário
+/**
+ * @swagger
+ * /usuario/login:
+ *   post:
+ *     summary: Cria um novo usuário
+ *     tags: [Usuarios]
+ *     requestBody:
+ *       content:
+ *         application/json:
+ *           example:
+ *             cpf: John Doe
+ *             senha: john@example.com
+ *     responses:
+ *       201:
+ *         description: Usuário criado com sucesso
+ *         content:
+ *           application/json:
+ *             example:
+ *               id: 1
+ *               cpf: John Doe
+ *               senha: john@example.com
+ */
+
+
+
+
+
+

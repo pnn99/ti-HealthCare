@@ -4,6 +4,25 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const publicPath = path.join(__dirname, 'public');
 const cors = require('cors');
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+
+// Swagger setup
+const options = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'HealthCare',
+      version: '1.0.0',
+      description: 'Your API Description',
+    },
+  },
+  apis: ['./rotas/*.js'], // Path to the API routes
+};
+
+const specs = swaggerJsdoc(options);
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 // Configuração do banco e outros módulos
 const conecta_banco = require('./models/conecta_banco');
